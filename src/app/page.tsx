@@ -2,6 +2,7 @@ import { ConnectButton } from "@/components/ConnectButton";
 import { InfoList } from "@/components/InfoList";
 import { ActionButtonList } from "@/components/ActionButtonList";
 import Image from 'next/image';
+import { CreateContractButton } from "@/components/CreateContractButton";
 
 export default function Home() {
 
@@ -12,6 +13,8 @@ export default function Home() {
 
       <ConnectButton />
       <ActionButtonList />
+      <input value={"input your name here"}/>
+      <CreateContractButton/>
       <div className="advice">
         <p>
           This projectId only works on localhost. <br/>
