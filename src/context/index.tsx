@@ -24,8 +24,11 @@ export const modal = createAppKit({
   metadata,
   themeMode: 'dark',
   features: {
-    analytics: true // Optional - defaults to your Cloud configuration
+    analytics: true, // Optional - defaults to your Cloud configuration
+    email: false,
+    socials: false
   },
+  allWallets: "HIDE",
   themeVariables: {
     '--w3m-accent': '#000000',
   },
