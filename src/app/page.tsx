@@ -1,5 +1,4 @@
 import { ConnectButton } from "@/components/ConnectButton";
-import { InfoList } from "@/components/InfoList";
 import Image from 'next/image';
 import { CreateContractButton } from "@/components/CreateContractButton";
 
@@ -19,7 +18,6 @@ export default function Home() {
           Go to <a href="https://cloud.reown.com" target="_blank" className="link-button" rel="Reown Cloud">Reown Cloud</a> to get your own.
         </p>
       </div>
-      <InfoList />
     </div>
   );
 }
