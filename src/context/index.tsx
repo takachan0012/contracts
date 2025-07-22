@@ -26,7 +26,10 @@ export const modal = createAppKit({
   features: {
     analytics: true, // Optional - defaults to your Cloud configuration
     email: false,
-    socials: false
+    socials: false,
+    swaps: false,
+    send: false,
+    onramp: false
   },
   allWallets: "HIDE",
   themeVariables: {
