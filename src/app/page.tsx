@@ -1,6 +1,5 @@
 import { ConnectButton } from "@/components/ConnectButton";
 import { InfoList } from "@/components/InfoList";
-import { ActionButtonList } from "@/components/ActionButtonList";
 import Image from 'next/image';
 import { CreateContractButton } from "@/components/CreateContractButton";
 
@@ -12,7 +11,6 @@ export default function Home() {
       <h1>AppKit ethers Next.js App Router Example</h1>
 
       <ConnectButton />
-      <ActionButtonList />
       <input value={"input your name here"}/>
       <CreateContractButton/>
       <div className="advice">
