@@ -1,10 +1,8 @@
 'use client'
 
 import { useAppKitProvider, useAppKitAccount } from "@reown/appkit/react"
-import { BrowserProvider, Contract, Eip1193Provider } from "ethers"
-import ContractFactoryAbi from "@/lib/ContractFactory.json"
-
-const contractFactory = "0x7aaf7793a3e02ff5061ee5d43425316be00f4d88"
+import { BrowserProvider, Eip1193Provider, ContractFactory } from "ethers"
+import ContractERC20 from "@/lib/ContractERC20.json"
 
 export const CreateContractButton = () => {
     const { isConnected } = useAppKitAccount()
@@ -15,10 +13,14 @@ export const CreateContractButton = () => {
         
         const ethersProvider = new BrowserProvider(walletProvider as Eip1193Provider)
         const signer = await ethersProvider.getSigner()
-        const contract = new Contract(contractFactory, ContractFactoryAbi, signer)
-        const createContract = await contract.createToken("Fame on Fire", "FOF", 2000000)
-        await createContract.wait()
-        console.log(`success! hash: ${createContract.hash}`)
+        const contract = new ContractFactory(ContractERC20.abi, ContractERC20.bytecode, signer)
+        const createContract = await contract.deploy(
+            "Nexus Token",
+            "NT", 
+            2000_000
+        )
+        await createContract.waitForDeployment()
+        console.log(`success! token address: ${createContract.target}`)
     }
-    return <button onClick={createContract}>Create token</button>
+    return <button onClick={createContract}>Deploy token</button>
 }
