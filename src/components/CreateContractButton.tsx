@@ -22,5 +22,5 @@ export const CreateContractButton = () => {
         await createContract.waitForDeployment()
         console.log(`success! token address: ${createContract.target}`)
     }
-    return <button onClick={createContract}>Deploy token</button>
+    return <button onClick={createContract}>Deploy</button>
 }

@@ -10,7 +10,6 @@ export default function Home() {
       <h1>AppKit ethers Next.js App Router Example</h1>
 
       <ConnectButton />
-      <input value={"input your name here"}/>
       <CreateContractButton/>
       <div className="advice">
         <p>

@@ -1,6 +1,6 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #141f43;
+  --foreground: #7c4dc6;
 }
 
 html,
@@ -34,7 +34,7 @@ a {
   }
 }
 
-section {
+/* section {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 16px;
@@ -43,7 +43,7 @@ section {
   margin: 10px;
   width: 90%;
   text-align: left;
-}
+} */
 
 .pages {
   align-items: center;
@@ -52,27 +52,27 @@ section {
 }
 
 button {
-  padding: 10px 15px;
-  background-color: white;
-  color: black;
-  border: 2px solid black;
-  border-radius: 6px;
+  padding: 10px 40px;
+  border: 0;
+  background-color: var(--foreground);
+  color: white;
+  border-radius: 60px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 550;
   cursor: pointer;
   transition: all 0.3s ease;
   margin: 15px; /* Space between buttons */
 }
 
 button:hover {
-  background-color: black;
-    color: white;
+  background-color: #6140b8;
+  color: white;
 }
 
-button:active {
-  background-color: #333; /* Dark gray on click */
-    color: white;
-}
+/* button:active { */
+  /* background-color: #333; Dark gray on click */
+    /* color: white; */
+/* } */
 
 h1 {
   margin: 20px;
