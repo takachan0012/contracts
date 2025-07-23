@@ -5,6 +5,7 @@ import { BrowserProvider, Eip1193Provider, ContractFactory } from "ethers"
 import ContractERC20 from "@/lib/ContractERC20.json"
 import Input from "./Input"
 import { useState } from "react"
+import { ConnectButton } from "./ConnectButton"
 
 interface ParamsCreateContract {
     name: string,
@@ -44,13 +45,16 @@ export const CreateContractButton = () => {
             <Input onChange={(e) => setData({...data, name: e.target.value})} type="text" value={data.name} placeholder="Name" />
             <Input onChange={(e) => setData({...data, symbol: e.target.value})} type="text" value={data.symbol} placeholder="Symbol" />
             <Input onChange={(e) => setData({...data, initialsupply: Number(e.target.value)})} type="number" value={data.initialsupply.toString()} placeholder="Supply" />
-            <button onClick={() => createContract({
-                name: data.name,
-                symbol: data.symbol,
-                initialSupply: data.initialsupply
-            })} disabled={isLoading || !isConnected || data.name.trim() === "" || data.symbol.trim() === ""} className={`swap-button ${isLoading ? "loading" : ""}`}>
-                {isLoading ? "Deploying..." : "Deploy"}
-            </button>
+            {
+                isConnected ? 
+                <button onClick={() => createContract({
+                    name: data.name,
+                    symbol: data.symbol,
+                    initialSupply: data.initialsupply
+                })} disabled={isLoading || !isConnected || data.name.trim() === "" || data.symbol.trim() === ""} className={`swap-button ${isLoading ? "loading" : ""}`}>
+                    {isLoading ? "Deploying..." : "Deploy"}
+                </button> : <ConnectButton/>
+            }
         </div>
     )
 }
