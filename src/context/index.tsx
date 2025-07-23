@@ -34,7 +34,7 @@ export const modal = createAppKit({
   },
   allWallets: "HIDE",
   themeVariables: {
-    '--w3m-accent': '#7c4dc6',
+    '--w3m-accent': '#4f46e5',
   },
   chainImages: {
     688688: 'https://images.dodoex.io/dxc9CigBxKMxndcqOKVsmQSwtGB0HJfcQF2wLhTTkKU/rs:fit:60:60:0/g:no/aHR0cHM6Ly90b2tlbi1pbWcuZG9kb2V4LmlvLzY4ODY4OC8weDMwMTliMjQ3MzgxYzg1MGFiNTNkYzBlZTUzYmNlN2EwN2VhOTE1NWY.webp'
