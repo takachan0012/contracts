@@ -21,12 +21,35 @@ body {
   padding: 2rem;
 }
 
+.pages {
+  position: relative;
+  padding: 2rem;
+}
+
+.connect-button-wrapper {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #121212; /* optional dark background */
+  color: white; /* optional text color */
+  text-align: center;
+  padding: 2rem;
+}
+
 .swap-container {
   background-color: var(--card-color);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   padding: 1.5rem;
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
@@ -71,18 +94,26 @@ body {
   padding: 0.75rem;
   font-size: 1rem;
   font-weight: 600;
-  background-color: var(--accent-color);
+  background-color: #4f46e5;
   color: white;
   border: none;
   border-radius: 0.75rem;
   margin-top: 1rem;
   cursor: pointer;
-  transition: var(--transition);
+  transition: background-color 0.3s ease;
 }
 
-.swap-button:hover {
+.swap-button:hover:enabled {
   background-color: #3730a3;
 }
+
+.swap-button:disabled {
+  background-color: #3a3a3a;
+  color: #aaa;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 
 .balance-text {
   font-size: 0.8rem;

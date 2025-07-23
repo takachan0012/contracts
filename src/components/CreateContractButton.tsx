@@ -18,19 +18,26 @@ export const CreateContractButton = () => {
     const [data, setData] = useState({
         name: '', symbol: '', initialsupply: 1000_000
     })
+    const [isLoading, setIsLoading] = useState(false)
     const createContract = async ({
         name, symbol, initialSupply
     }:ParamsCreateContract) => {
         if(!isConnected) throw Error('Wallet disconnected');
-        
-        const ethersProvider = new BrowserProvider(walletProvider as Eip1193Provider)
-        const signer = await ethersProvider.getSigner()
-        const contract = new ContractFactory(ContractERC20.abi, ContractERC20.bytecode, signer)
-        const createContract = await contract.deploy(
-            name, symbol, initialSupply
-        )
-        await createContract.waitForDeployment()
-        console.log(`success! token address: ${createContract.target}`)
+        try {
+            setIsLoading(true)
+            const ethersProvider = new BrowserProvider(walletProvider as Eip1193Provider)
+            const signer = await ethersProvider.getSigner()
+            const contract = new ContractFactory(ContractERC20.abi, ContractERC20.bytecode, signer)
+            const createContract = await contract.deploy(
+                name, symbol, initialSupply
+            )
+            await createContract.waitForDeployment()
+            console.log(`success deploy! token address: ${createContract.target}`)
+        } catch (error) {
+            console.error(`failed deploy: ${error}`)
+        }finally{
+            setIsLoading(false)
+        }
     }
     return (
         <div className="swap-container">
@@ -41,7 +48,9 @@ export const CreateContractButton = () => {
                 name: data.name,
                 symbol: data.symbol,
                 initialSupply: data.initialsupply
-            })} className="swap-button">Deploy</button>
+            })} disabled={isLoading || !isConnected || data.name.trim() === "" || data.symbol.trim() === ""} className={`swap-button ${isLoading ? "loading" : ""}`}>
+                {isLoading ? "Deploying..." : "Deploy"}
+            </button>
         </div>
     )
 }
