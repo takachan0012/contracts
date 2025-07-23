@@ -33,15 +33,15 @@ export const CreateContractButton = () => {
         console.log(`success! token address: ${createContract.target}`)
     }
     return (
-        <>
-        <Input onChange={(e) => setData({...data, name: e.target.value})} type="text" value={data.name} placeholder="Name" />
-        <Input onChange={(e) => setData({...data, symbol: e.target.value})} type="text" value={data.symbol} placeholder="Symbol" />
-        <Input onChange={(e) => setData({...data, initialsupply: Number(e.target.value)})} type="number" value={data.initialsupply.toString()} placeholder="Supply" />
-        <button onClick={() => createContract({
-            name: data.name,
-            symbol: data.symbol,
-            initialSupply: data.initialsupply
-        })}>Deploy</button>
-        </>
+        <div className="swap-container">
+            <Input onChange={(e) => setData({...data, name: e.target.value})} type="text" value={data.name} placeholder="Name" />
+            <Input onChange={(e) => setData({...data, symbol: e.target.value})} type="text" value={data.symbol} placeholder="Symbol" />
+            <Input onChange={(e) => setData({...data, initialsupply: Number(e.target.value)})} type="number" value={data.initialsupply.toString()} placeholder="Supply" />
+            <button onClick={() => createContract({
+                name: data.name,
+                symbol: data.symbol,
+                initialSupply: data.initialsupply
+            })} className="swap-button">Deploy</button>
+        </div>
     )
 }

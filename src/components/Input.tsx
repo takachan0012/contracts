@@ -18,14 +18,16 @@ const Input: React.FC<InputProps> = ({
   name = "",
 }) => {
   return (
-    <input
-      type={type}
-      value={value}
-      name={name}
-      placeholder={placeholder}
-      onChange={onChange}
-      className={className}
-    />
+    <div className="token-input">
+      <input
+        type={type}
+        value={value}
+        name={name}
+        placeholder={placeholder}
+        onChange={onChange}
+        className={className}
+      />
+    </div>
   );
 };
 
