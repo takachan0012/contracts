@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ConnectButton } from "thirdweb/react";
 import thirdwebIcon from "@public/thirdweb.svg";
 import { client } from "./client";
+import { createWallet } from "thirdweb/wallets";
 
 export default function Home() {
   return (
@@ -18,6 +19,10 @@ export default function Home() {
               name: "Example App",
               url: "https://example.com",
             }}
+            wallets={[
+              createWallet('io.metamask'),
+              createWallet("com.okex.wallet")
+            ]}
           />
         </div>
 
