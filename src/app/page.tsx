@@ -3,16 +3,23 @@
 import Image from "next/image";
 import ConnectButton from "@/components/ConnectButton"
 import thirdwebIcon from "@public/thirdweb.svg";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <main className="p-4 pb-10 min-h-[100vh] flex items-center justify-center container max-w-screen-lg mx-auto">
+    <main className="p-4 pb-10 min-h-[100vh] flex items-center justify-center container max-w-screen-lg mx-auto dark">
       <div className="py-20">
         <Header />
 
         <div className="flex justify-center mb-20">
-          <ConnectButton
-          />
+          <Card>
+              <CardContent>
+
+              </CardContent>
+              <CardFooter>
+                <ConnectButton/>
+              </CardFooter>
+          </Card>
         </div>
 
         <ThirdwebResources />
