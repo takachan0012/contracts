@@ -1,10 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { ConnectButton } from "thirdweb/react";
+import ConnectButton from "@/components/ConnectButton"
 import thirdwebIcon from "@public/thirdweb.svg";
-import { client } from "./client";
-import { createWallet } from "thirdweb/wallets";
 
 export default function Home() {
   return (
@@ -14,15 +12,6 @@ export default function Home() {
 
         <div className="flex justify-center mb-20">
           <ConnectButton
-            client={client}
-            appMetadata={{
-              name: "Example App",
-              url: "https://example.com",
-            }}
-            wallets={[
-              createWallet('io.metamask'),
-              createWallet("com.okex.wallet")
-            ]}
           />
         </div>
 
