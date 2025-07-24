@@ -2,10 +2,10 @@ import { defineChain } from "thirdweb"
 
 export const pharosTestnet = defineChain({
     id: 688688,
-    name: 'Pharos Network Testnet',
+    name: 'pharos network testnet',
     nativeCurrency: {
         decimals: 18,
-        name: 'pharos network',
+        name: 'pharos network testnet',
         symbol: 'PHRS'
     },
     rpcUrls: {
