@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/next";
 
 import './globals.css';
 import ContextProvider from '@/context'
@@ -23,6 +24,7 @@ export default async function RootLayout({
       <body>
         <ContextProvider>{children}</ContextProvider>
         <Toaster position="bottom-right" reverseOrder={false}/>
+        <Analytics/>
       </body>
     </html>
   );
