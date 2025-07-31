@@ -56,10 +56,35 @@ export const CreateContractButton = () => {
                 symbol: "",
                 initialsupply: 0
             })
-        } catch (error:any) {
-            toast.dismiss()
-            toast.error(`Failed to deploy: ${error.shortMessage}`)
-            console.log(`Failed to deploy: ${error.shortMessage}`)
+        } catch (error: unknown) {
+            toast.dismiss();
+
+            if (
+                typeof error === "object" &&
+                error !== null &&
+                "error" in error &&
+                typeof error === "object" &&
+                error !== null &&
+                "message" in error
+            ) {
+                const nestedError = error as {
+                    error: { message: string };
+                    shortMessage?: string;
+                };
+                toast.error(`Failed to deploy: ${nestedError.error.message}`);
+                console.log(`Error message: ${nestedError.error.message}`);
+            } else if (
+                typeof error === "object" &&
+                error !== null &&
+                "shortMessage" in error
+            ) {
+                const err = error as { shortMessage: string };
+                toast.error(`Failed to deploy: ${err.shortMessage}`);
+                console.log(`Error shortMessage: ${err.shortMessage}`);
+            } else {
+                toast.error("Failed to deploy: Unknown error");
+                console.error("Unknown error:", error);
+            }
         }finally{
             setIsLoading(false)
         }
