@@ -6,8 +6,8 @@ import './globals.css';
 import ContextProvider from '@/context'
 
 export const metadata: Metadata = {
-  title: "AppKit in Next.js + ethers",
-  description: "AppKit example dApp",
+  title: "Token Creator dApp | Built with Next.js & Ethers.js",
+  description: "Create and deploy your own custom crypto tokens using our decentralized application. Powered by Next.js and ethers.js.",
 };
 
 export default async function RootLayout({
