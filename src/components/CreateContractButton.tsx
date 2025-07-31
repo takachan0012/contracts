@@ -58,8 +58,8 @@ export const CreateContractButton = () => {
             })
         } catch (error:any) {
             toast.dismiss()
-            toast.error(`Failed to deploy: ${error.message || error}`)
-            console.error(`failed deploy: ${error}`)
+            toast.error(`Failed to deploy: ${error.shortMessage}`)
+            console.log(`Failed to deploy: ${error.shortMessage}`)
         }finally{
             setIsLoading(false)
         }
