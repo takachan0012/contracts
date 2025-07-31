@@ -12,13 +12,17 @@ export default function Home() {
       </div>
       <div className="center-container">
         <Image src="/reown.svg" alt="Reown" width={150} height={150} priority />
-        <h1>AppKit ethers Next.js App Router Example</h1>
+        <h1>Easily Launch Your Own Token</h1>
       </div>
       <CreateContractButton />
       <div className="center-container">
           <p>
-            This projectId only works on localhost. <br />
-            Go to <a href="https://cloud.reown.com" target="_blank" className="link-button" rel="Reown Cloud">Reown Cloud</a> to get your own.
+            Made with &#9829; by <a 
+            style={{color: "#fff"}}
+            href="https://takanode.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >takanode →</a>
           </p>
       </div>
   </div>
