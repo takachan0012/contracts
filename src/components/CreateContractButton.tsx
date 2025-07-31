@@ -51,6 +51,11 @@ export const CreateContractButton = () => {
                 </span>
             )
             console.log(`success deploy! https://testnet.pharosscan.xyz/address/${createContract.target}`)
+            setData({
+                name: "",
+                symbol: "",
+                initialsupply: 0
+            })
         } catch (error:any) {
             toast.dismiss()
             toast.error(`Failed to deploy: ${error.message || error}`)
