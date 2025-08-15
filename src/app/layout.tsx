@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 
 import './globals.css';
 import ContextProvider from '@/context'
+import NetworkWatcher from "@/components/NetworkWatcher";
 
 export const metadata: Metadata = {
   title: "Token Creator dApp | Built with Next.js & Ethers.js",
@@ -22,7 +23,10 @@ export default async function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body>
-        <ContextProvider>{children}</ContextProvider>
+        <ContextProvider>
+          <NetworkWatcher/>
+          {children}
+        </ContextProvider>
         <Toaster position="bottom-right" reverseOrder={false}/>
         <Analytics/>
       </body>

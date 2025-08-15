@@ -1,10 +1,23 @@
 "use client"
 
-import { ConnectButton } from "@/components/ConnectButton";
-import Image from 'next/image';
-import { CreateContractButton } from "@/components/CreateContractButton";
+import { ConnectButton } from "@/components/ConnectButton"
+import Image from 'next/image'
+import { CreateContractButton } from "@/components/CreateContractButton"
+import { networks } from "@/config"
+import { notFound } from "next/navigation"
 
-export default function Home() {
+
+interface HomePage {
+  params: {
+    id: string
+  }
+}
+
+export default function Home({params}: HomePage) {
+  const chainId = Number(params.id)
+  const network = networks.find(net => net.id === chainId)
+
+  if(!network) return notFound()
   return (
   <div className="pages">
       <div className="connect-button-wrapper">
