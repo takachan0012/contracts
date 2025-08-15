@@ -1,6 +1,5 @@
 "use client"
 
-import * as React from "react"
 import { ConnectButton } from "@/components/ConnectButton"
 import Image from 'next/image'
 import { CreateContractButton } from "@/components/CreateContractButton"
@@ -15,8 +14,8 @@ interface HomePage {
 }
 
 export default function Home({params}: HomePage) {
-  const { id } = React.use()
-  const network = networks.find(net => net.id === id)
+  const chainId = Number(params.id)
+  const network = networks.find(net => net.id === chainId)
 
   if(!network) return notFound()
   return (
