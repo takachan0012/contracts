@@ -1,4 +1,5 @@
-"use client"
+"use client";
+import { use } from "react";
 
 import { ConnectButton } from "@/components/ConnectButton"
 import Image from 'next/image'
@@ -8,12 +9,13 @@ import { notFound } from "next/navigation"
 
 
 interface HomePage {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
-export default function Home({params}: HomePage) {
+export default function Home(props: HomePage) {
+  const params = use(props.params);
   const chainId = Number(params.id)
   const network = networks.find(net => net.id === chainId)
 
