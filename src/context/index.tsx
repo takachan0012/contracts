@@ -1,6 +1,6 @@
 'use client'
 
-import { ethersAdapter, projectId, networks, pharos_testnet, nexus_testnet3 } from '@/config'
+import { ethersAdapter, projectId, networks} from '@/config'
 import { createAppKit } from '@reown/appkit/react'
 import React, { type ReactNode } from 'react'
 
