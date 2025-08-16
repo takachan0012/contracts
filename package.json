@@ -1,7 +1,15 @@
 {
-  "name": "next-ethers-app-router",
+  "name": "contract-deployer",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Taka",
+    "url": "https://takanode.vercel.app/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/takachan0012/contracts.git"
+  },
   "scripts": {
     "dev": "next dev --hostname 0.0.0.0 --port 8545",
     "build": "next build",

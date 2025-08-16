@@ -1,11 +1,12 @@
 'use client'
 
-import { useAppKitProvider, useAppKitAccount } from "@reown/appkit/react"
+import { useAppKitProvider, useAppKitAccount, useAppKitNetwork } from "@reown/appkit/react"
 import { BrowserProvider, Eip1193Provider, ContractFactory } from "ethers"
 import ContractERC20 from "@/lib/ContractERC20.json"
 import Input from "./Input"
 import { useState } from "react"
 import toast from "react-hot-toast"
+import { networks } from "@/config"
 
 interface ParamsCreateContract {
     name: string,
@@ -16,6 +17,7 @@ interface ParamsCreateContract {
 export const CreateContractButton = () => {
     const { isConnected } = useAppKitAccount()
     const { walletProvider } = useAppKitProvider('eip155')
+    const network = useAppKitNetwork()
     const [data, setData] = useState({
         name: '', symbol: '', initialsupply: 1000_000
     })
@@ -29,9 +31,10 @@ export const CreateContractButton = () => {
         } 
         try {
             setIsLoading(true)
-            toast.loading("Deployin token...")
+            toast.loading("Deploying token...")
             const ethersProvider = new BrowserProvider(walletProvider as Eip1193Provider)
             const signer = await ethersProvider.getSigner()
+            const explorerUrl = networks.find(net => net.id === network?.chainId)?.blockExplorers?.default.url
             const contract = new ContractFactory(ContractERC20.abi, ContractERC20.bytecode, signer)
             const createContract = await contract.deploy(
                 name, symbol, initialSupply
@@ -42,7 +45,7 @@ export const CreateContractButton = () => {
                 <span>
                     Token deployed:&nbsp;
                     <a
-                        href={`https://testnet.pharosscan.xyz/address/${createContract.target}`}
+                        href={`${explorerUrl}/address/${createContract.target}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         >
@@ -50,7 +53,6 @@ export const CreateContractButton = () => {
                     </a>
                 </span>
             )
-            console.log(`success deploy! https://testnet.pharosscan.xyz/address/${createContract.target}`)
             setData({
                 name: "",
                 symbol: "",

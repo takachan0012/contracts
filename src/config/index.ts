@@ -31,9 +31,31 @@ export const pharos_testnet = defineChain({
       url: 'https://testnet.pharosscan.xyz/'
     }
   },
-  
-  
 })
 
-export const networks = [pharos_testnet] as [AppKitNetwork, ...AppKitNetwork[]]
+export const nexus_testnet3 = defineChain({
+  id: 3940,
+  name: 'Nexus',
+  caipNetworkId: 'eip155:3940',
+  chainNamespace: 'eip155',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Nexus Token',
+    symbol: 'NEX'
+  },
+  rpcUrls: {
+    default: {
+      http: ['https://nexus-testnet.g.alchemy.com/public'],
+      webSocket: ['wss://testnet3.rpc.nexus.xyz']
+    }
+  },
+  blockExplorers: {
+    default: {
+      name: 'Explorer',
+      url: 'https://testnet3.explorer.nexus.xyz/'
+    }
+  },
+})
+
+export const networks:[AppKitNetwork, ...AppKitNetwork[]] = [pharos_testnet, nexus_testnet3]
 export const ethersAdapter = new EthersAdapter();
