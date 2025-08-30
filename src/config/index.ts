@@ -35,7 +35,7 @@ export const pharos_testnet = defineChain({
 
 export const nexus_testnet3 = defineChain({
   id: 3940,
-  name: 'Nexus',
+  name: 'Nexus Testnet III',
   caipNetworkId: 'eip155:3940',
   chainNamespace: 'eip155',
   nativeCurrency: {
