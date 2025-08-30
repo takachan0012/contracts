@@ -34,10 +34,10 @@ export default function Home(props: HomePage) {
           <p>
             Made with &#9829; by <a 
             style={{color: "#fff"}}
-            href="https://takanode.vercel.app/"
+            href="https://takadev.xyz/"
             target="_blank"
             rel="noopener noreferrer"
-            >takanode →</a>
+            >takadev →</a>
           </p>
       </div>
   </div>
