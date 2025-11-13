@@ -22,7 +22,7 @@ export const modal = createAppKit({
   projectId,
   networks,
   metadata,
-  themeMode: 'dark',
+  themeMode: "dark",
   features: {
     analytics: true, // Optional - defaults to your Cloud configuration
     email: false,
@@ -30,17 +30,20 @@ export const modal = createAppKit({
     swaps: false,
     send: false,
     onramp: false,
-    history: false
+    history: false,
   },
   allWallets: "HIDE",
   themeVariables: {
-    '--w3m-accent': '#4f46e5',
+    "--w3m-accent": "#4f46e5",
   },
   chainImages: {
-    688688: 'https://images.dodoex.io/dxc9CigBxKMxndcqOKVsmQSwtGB0HJfcQF2wLhTTkKU/rs:fit:60:60:0/g:no/aHR0cHM6Ly90b2tlbi1pbWcuZG9kb2V4LmlvLzY4ODY4OC8weDMwMTliMjQ3MzgxYzg1MGFiNTNkYzBlZTUzYmNlN2EwN2VhOTE1NWY.webp',
-    3940: 'https://app.nexus.xyz/favicon.ico'
-  }
-})
+    688688:
+      "https://images.dodoex.io/dxc9CigBxKMxndcqOKVsmQSwtGB0HJfcQF2wLhTTkKU/rs:fit:60:60:0/g:no/aHR0cHM6Ly90b2tlbi1pbWcuZG9kb2V4LmlvLzY4ODY4OC8weDMwMTliMjQ3MzgxYzg1MGFiNTNkYzBlZTUzYmNlN2EwN2VhOTE1NWY.webp",
+    688689:
+      "https://images.dodoex.io/dxc9CigBxKMxndcqOKVsmQSwtGB0HJfcQF2wLhTTkKU/rs:fit:60:60:0/g:no/aHR0cHM6Ly90b2tlbi1pbWcuZG9kb2V4LmlvLzY4ODY4OC8weDMwMTliMjQ3MzgxYzg1MGFiNTNkYzBlZTUzYmNlN2EwN2VhOTE1NWY.webp",
+    3940: "https://app.nexus.xyz/favicon.ico",
+  },
+});
 
 function ContextProvider({ children }: { children: ReactNode}) {
   return (
