@@ -37,6 +37,7 @@ export const modal = createAppKit({
     "--w3m-accent": "#4f46e5",
   },
   chainImages: {
+    5042002: "https://cdn.prod.website-files.com/685311a976e7c248b5dfde95/68921f69e5659feee825637e_9a3d143150a36125b5d7f0c2367c9ca6_arc-favicon-test.png",
     688688:
       "https://images.dodoex.io/dxc9CigBxKMxndcqOKVsmQSwtGB0HJfcQF2wLhTTkKU/rs:fit:60:60:0/g:no/aHR0cHM6Ly90b2tlbi1pbWcuZG9kb2V4LmlvLzY4ODY4OC8weDMwMTliMjQ3MzgxYzg1MGFiNTNkYzBlZTUzYmNlN2EwN2VhOTE1NWY.webp",
     688689:
